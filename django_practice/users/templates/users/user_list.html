@@ -1,0 +1,18 @@
+{% extends "blog/base.html" %}
+{% block content %}
+{% csrf_token %}
+<div class="content-section">
+    <h1> Registered devices </h1>
+</div>
+
+{% for user in user_list %}
+<div class="content-section" style="font-size:15px; ">
+    <div>IP-address: <b style="color:dodgerblue;">{{ user }}</b></div> <div> Username: {{ user.username }}</div><div>Device_type: {{ user.device_type}}</div>
+</div>
+{%endfor%}
+{% for data in hostname %}
+
+    {{ data.ip_address.IP_address }}
+    {{ data.ip_address.username }}
+{%endfor%}
+{% endblock content %}

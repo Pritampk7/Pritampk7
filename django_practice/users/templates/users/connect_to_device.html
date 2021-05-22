@@ -1,0 +1,259 @@
+            {% load crispy_forms_tags %}
+            <form method="POST" style="margin: 0px;" xmlns="http://www.w3.org/1999/html">
+            {% csrf_token %}
+            <!DOCTYPE html>
+            <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+            <style>
+            * {box-sizing: border-box;}
+
+            body {
+              margin: 0;
+              font-family: Arial, Helvetica, sans-serif;
+            }
+
+            .header {
+              overflow: hidden;
+              background-color: #333;
+              padding: 20px 10px;
+            }
+
+            .header a {
+              float: left;
+              color: white;
+              text-align: center;
+              padding: 12px;
+              text-decoration: none;
+              font-size: 18px;
+              line-height: 25px;
+              border-radius: 4px;
+            }
+
+            .header a.logo {
+              font-size: 25px;
+              font-weight: bold;
+              background: red;
+            }
+
+            .header a:hover {
+              background-color: #C80000 ;
+              color: white;
+            }
+
+                .header a.active {
+                  background-color:dodgerblue;
+                  color: white;
+                }
+
+            .header-right {
+              float: right;
+            }
+
+            @media screen and (max-width: 500px) {
+              .header a {
+                float: none;
+                display: block;
+                text-align: left;
+              }
+
+              .header-right {
+                float: none;
+              }
+            }
+            body {
+              margin: 0;
+            }
+
+            .navbar {
+              overflow: hidden;
+              background-color: #333;
+              position: fixed;
+              bottom: 0;
+              width: 100%;
+              left:0;
+            }
+
+            .navbar a {
+              float: left;
+              display: block;
+              color: #f2f2f2;
+              text-align: center;
+              padding: 11px 16px;
+              text-decoration: none;
+              font-size: 17px;
+              left:0;
+            }
+
+            .navbar a:hover {
+              background: #f1f1f1;
+              color: black;
+            }
+
+            .navbar a.active {
+              background-color: #4CAF50;
+              color: white;
+            }
+
+            .main {
+              padding: 16px;
+              margin-bottom: 30px;
+            }
+            .button {
+              border-radius: 4px;
+              background-color: dodgerblue;
+              border: none;
+              color: white;
+              text-align: center;
+              font-size: 20px;
+              padding: 10px;
+              width: 100px;
+              transition: all 0.5s;
+              cursor: pointer;
+              margin: 5px;
+              margin-left: 16px;
+            }
+
+            .button span {
+              cursor: pointer;
+              display: inline-block;
+              position: relative;
+              transition: 0.5s;
+            }
+
+            .button span:after {
+              content: '';
+              position: absolute;
+              opacity: 0;
+              top: 0;
+              right: -20px;
+              transition: 0.5s;
+            }
+
+            .button:hover span {
+              padding-right: 25px;
+            }
+
+            .button:hover span:after {
+              opacity: 1;
+              right: 0;
+            }
+            .bgImgCenter{
+                background-image: url('/static/image/cool-background.png');
+<!--                                url('/static/image/cool-background.png');-->
+<!--                                https://jmd.im/wp-content/uploads/2017/06/blacki_thumbnail.jpg-->
+<!--                                https://cutewallpaper.org/21/black-and-white-paris-wallpaper/BLVCK-Series-IV-Wallpaper-Collection-Blvck-Paris.jpg-->
+                background-repeat: no-repeat;
+                background-position: center;
+<!--                                position: relative-->
+<!--                                width: 100px;-->
+                height: 800px;
+            }
+            body {
+                 background-image: url("background.jpg");
+                 background-color: #cccccc;
+                }
+            .logo-new {
+              background-image: url('/static/image/logo_transparent.png');
+              width: 210px;
+              height: 210px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
+
+                .mt-16 {
+                margin-top:16px
+                }
+
+        </style>
+        </head>
+            <body bgcolor="#F0F0F0">
+            <div class="row" style="margin:0; height: 100%;">
+            <div class="bgImgCenter col-4" >
+<!--                                            <div style="color: white; font-family: fantasy; font-size: 40px; text-align:center; justify-content: center; margin-top:300px;">zilpanet.</div>-->
+<!--                                            <img src="/static/image/logo_transparent.png" style="margin-top:250px; text-align: center;margin-left:95px;" height="190px" width="190px" alt="logo">-->
+                                <input type="button" value="Go back!" onclick="history.back()">
+            </div>
+               <div class="container col-8" style="text-align: center; height: 100%; display: flex; justify-content: center; padding: 1px;">
+
+              <form  action="/action_page.php" style="text-align: center; margin: 0px;">
+
+                <div style="padding: 10px; text-align: center; display: flex; flex-direction: column;align-items: center;background: white; height: 100%; width: 100%;">
+                    <div class="logo-new">
+<!--                                        <div style="background-image: url('/static/image/logo_transparent.png')"></div>-->
+                        <img src="/static/image/logo_transparent.png" style="margin-top:65px;" height="210px" width="210px" alt="logo">
+                    </div>
+                    <div style="width: 50%; height: 100%; margin-top:55px; font-family: Source Sans Pro; font-size: 20px; align-items: center; margin-left: 35px;">
+
+                    <div class="row mt-16">
+                        <div class="control-label col-sm-3"  >Hostnames:</div>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" name="ip" style="color: #353839; border-color: darkgray;" required placeholder="Enter IP address" >
+                        </div>
+                    </div>
+                    <div class="row mt-16">
+                        <div class="control-label col-sm-3" style="">Device_type:</div>
+                            <div class="col-sm-6">
+                                <input list="os_type" class="form-control" style="color: #353839; border-color: darkgray;" required placeholder="Enter device type" name="os_type"/>
+                                  <datalist id="os_type">
+                                      <option value="cisco_ios">
+                                      <option value="juniper">
+                                      <option value="paloalto_panos">
+                                      <option value="aruba_os">
+                                      <option value="cisco_asa">
+                                      <option value="cisco_wlc">
+                                  </datalist>
+                            </div>
+                        </div>
+                    <div class="row mt-16">
+                      <label class="control-label col-sm-3" >Username:</label>
+                      <div class="col-sm-6">
+                        <input type="text" class="form-control" style=" color: #353839 ; border-color: darkgray;" name="user" required placeholder="Enter Username" >
+                      </div>
+                    </div>
+                    <div class="row mt-16">
+                        <div class="control-label col-sm-3" for="pwd" >Password:</div>
+                          <div class="col-sm-6">
+                            <input type="password" class="form-control" style=" color: #353839; border-color: darkgray;" id="pwd"  required placeholder="Enter password" name="password">
+                          </div>
+                    </div>
+                    <div class="row mt-16">
+                      <div class="control-label col-sm-3">Command:</div>
+                        <div class="col-sm-8">
+                            <label for="command"></label>
+                            <input type="text" list= "command" class="form-control" style="color: #353839 ; border-color: darkgray;" required placeholder="Enter Command" name="command">
+                            <datalist id="command">
+                                      <option value="show ip interface brief">
+                                      <option value="show version">
+                                      <option value="show interface description">
+                                      <option value="show vlan brief">
+                                      <option value="show inventory">
+                                      <option value="show power inline">
+                            </datalist>
+                        </div>
+                    </div>
+                    <div class="form-group mt-16">
+                      <div class="col-sm-offset-2 col-sm-10">
+                        <div class="checkbox"  style="margin-top: -10px; margin-right: 58px;">
+                          <label><input type="checkbox" style="margin-left: 63px; margin-right: 7px;" name="remember" >Remember me</label>
+                        </div>
+                      </div>
+                    <div class="form-group" >
+                      <div class="col-sm-offset-2 col-sm-10" style="margin-left: -64px; width: 83%;">
+                        <button type="submit" class="btn btn-default" style="width: 120%; padding-left: 0px;margin-left: 49px; background-color: dodgerblue; color: white; ">fetch data</button>
+                      </div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+              </form>
+            </div>
+            </div>
+    </body>
+   </html>
+</form>
